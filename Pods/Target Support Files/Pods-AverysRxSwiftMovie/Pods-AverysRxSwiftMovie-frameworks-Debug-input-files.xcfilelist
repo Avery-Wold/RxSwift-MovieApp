@@ -1,0 +1,4 @@
+${PODS_ROOT}/Target Support Files/Pods-AverysRxSwiftMovie/Pods-AverysRxSwiftMovie-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Nuke/Nuke.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
