@@ -16,6 +16,7 @@ final class SearchTableViewController: UIViewController {
     let tableView = UITableView()
     private let cellIdentifier = "CellIdentifier"
     private let appTitle = "Movie Search"
+    private let placeholder = "Enter Movie Title"
     private let minimumCharacterCount = 2
     private let apiClient = APIClient()
     private let disposeBag = DisposeBag()
@@ -33,6 +34,7 @@ final class SearchTableViewController: UIViewController {
         navigationItem.searchController?.obscuresBackgroundDuringPresentation = false
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.searchController?.searchBar.placeholder = placeholder
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         NSLayoutConstraint.activate([
@@ -59,7 +61,7 @@ final class SearchTableViewController: UIViewController {
             .bind(to: tableView.rx.items(cellIdentifier: cellIdentifier)) { index, model, cell in
                 if model.adult == false {
                     cell.textLabel?.text = model.title
-                    cell.textLabel?.adjustsFontSizeToFitWidth = true
+                    cell.textLabel?.numberOfLines = 0
                 }
             }
             .disposed(by: disposeBag)
