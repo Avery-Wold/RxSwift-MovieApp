@@ -21,7 +21,6 @@ final class MovieDetailsViewController: UIViewController {
     var movieReleaseDateLabel : UILabel = UILabel()
     var moviePosterImageView : UIImageView = UIImageView()
     private let basePoster = "http://image.tmdb.org/t/p"
-//    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +65,7 @@ final class MovieDetailsViewController: UIViewController {
         movieReleaseDateLabel.numberOfLines = 0
         movieReleaseDateLabel.lineBreakMode = .byWordWrapping
         movieReleaseDateLabel.textAlignment = NSTextAlignment.center
-        movieReleaseDateLabel.text = "Released: \(releaseDate ?? "")"
+        movieReleaseDateLabel.text = "Released: \(releaseDate ?? "Sorry no information is available")"
         movieReleaseDateLabel.contentMode = .scaleAspectFit
         
         movieOverviewLabel.lineBreakMode = .byWordWrapping

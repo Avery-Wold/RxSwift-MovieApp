@@ -51,9 +51,6 @@ final class APIClient {
             let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 do {
                     let model: MoviesResponse = try JSONDecoder().decode(MoviesResponse.self, from: data ?? Data())
-                    if model.totalResults == 0 {
-                       print("Not a valid movie title")
-                    }
                     observer.onNext(model.results as! T)
                 } catch let error {
                     observer.onError(error)
